@@ -60,7 +60,8 @@
       fullscreenBtn: "🔍 Fullscreen",
       hoursLabel: "🕒 Hours:",
       feeLabel: "🎟️ Fee:",
-      areaLabel: "📍 Area:"
+      areaLabel: "📍 Area:",
+      btnCityHall: "Andong City Hall"
     },
     ko: {
       siteTitle: "디스커버 안동",
@@ -106,7 +107,8 @@
       fullscreenBtn: "🔍 크게보기",
       hoursLabel: "🕒 운영시간:",
       feeLabel: "🎟️ 요금:",
-      areaLabel: "📍 위치:"
+      areaLabel: "📍 위치:",
+      btnCityHall: "안동시청"
     }
   };
 
@@ -727,6 +729,12 @@
 
     if (el.searchInput) {
       el.searchInput.placeholder = t.searchPlaceholder;
+    }
+
+    const cityhallBtn = document.getElementById("cityhall-btn");
+    if (cityhallBtn) {
+      cityhallBtn.href = isKo ? "https://www.andong.go.kr" : "https://www.andong.go.kr/en/main.do";
+      cityhallBtn.title = isKo ? "안동시청 공식 홈페이지" : "Official Andong City Hall Portal";
     }
 
     renderAttractions();
